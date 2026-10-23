@@ -2,7 +2,7 @@
 title: Navigation taxonomy redesign
 order: 2
 tag: Information architecture
-cover_image: ""
+cover_image: /assets/images/cases/navigation-taxonomy.svg
 illustration: tree
 summary: People struggled to find recipes in a very large library. I found out why and helped restructure the navigation around how users actually think.
 role: UX researcher

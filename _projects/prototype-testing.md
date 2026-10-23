@@ -2,7 +2,7 @@
 title: Compare & contrast prototype testing
 order: 3
 tag: Prototype testing
-cover_image: ""
+cover_image: /assets/images/cases/prototype-testing.svg
 illustration: prototypes
 summary: A media site was redesigning a key page and had four layout options. I tested which one helped people understand the page best.
 role: Research lead

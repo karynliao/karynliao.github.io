@@ -2,7 +2,7 @@
 title: Redefining online home décor shopping
 order: 1
 tag: Generative research
-cover_image: ""
+cover_image: /assets/images/cases/home-decor.svg
 illustration: journey
 summary: A home improvement retailer launched a new home décor category online. I reframed a request for small UI fixes into foundational research on how a new kind of customer shops for furniture.
 role: Research lead

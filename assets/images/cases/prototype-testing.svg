@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" font-family="Menlo, Consolas, monospace">
+  <rect width="800" height="600" fill="#F1E9E4"/>
+  <g stroke="#17202A" stroke-width="2">
+    <!-- A -->
+    <g transform="translate(60 150)"><rect width="150" height="250" rx="10" fill="#FBFBF9" stroke="#D8DBD3"/>
+      <rect x="14" y="16" width="122" height="96" rx="4" fill="#D8DBD3" stroke="none"/><rect x="14" y="126" width="100" height="10" rx="5" fill="#D8DBD3" stroke="none"/><rect x="14" y="146" width="80" height="8" rx="4" fill="#D8DBD3" stroke="none"/><rect x="14" y="170" width="122" height="60" rx="4" fill="#D8DBD3" stroke="none" opacity=".6"/></g>
+    <!-- B -->
+    <g transform="translate(234 150)"><rect width="150" height="250" rx="10" fill="#FBFBF9" stroke="#D8DBD3"/>
+      <rect x="14" y="16" width="110" height="10" rx="5" fill="#D8DBD3" stroke="none"/><rect x="14" y="36" width="122" height="150" rx="4" fill="#D8DBD3" stroke="none"/><rect x="14" y="200" width="70" height="8" rx="4" fill="#D8DBD3" stroke="none"/></g>
+    <!-- C (clearest) -->
+    <g transform="translate(408 150)"><rect x="-7" y="-7" width="164" height="264" rx="15" fill="#FFE46B" stroke="none"/><rect width="150" height="250" rx="10" fill="#FBFBF9"/>
+      <rect x="14" y="18" width="104" height="12" rx="6" fill="#17202A" stroke="none"/><rect x="14" y="40" width="80" height="8" rx="4" fill="#58616C" stroke="none"/><rect x="14" y="62" width="122" height="88" rx="4" fill="#D9B8A6" stroke="none"/><rect x="14" y="164" width="110" height="8" rx="4" fill="#D8DBD3" stroke="none"/><rect x="14" y="180" width="90" height="8" rx="4" fill="#D8DBD3" stroke="none"/><rect x="14" y="204" width="70" height="26" rx="13" fill="#17202A" stroke="none"/></g>
+    <!-- D -->
+    <g transform="translate(582 150)"><rect width="150" height="250" rx="10" fill="#FBFBF9" stroke="#D8DBD3"/>
+      <rect x="14" y="16" width="56" height="56" rx="4" fill="#D8DBD3" stroke="none"/><rect x="80" y="16" width="56" height="56" rx="4" fill="#D8DBD3" stroke="none"/><rect x="14" y="82" width="56" height="56" rx="4" fill="#D8DBD3" stroke="none"/><rect x="80" y="82" width="56" height="56" rx="4" fill="#D8DBD3" stroke="none"/><rect x="14" y="154" width="96" height="8" rx="4" fill="#D8DBD3" stroke="none"/></g>
+  </g>
+  <!-- gaze path over C -->
+  <polyline points="440,176 478,192 470,250 520,270 462,316 494,364" fill="none" stroke="#17202A" stroke-width="1.5" stroke-dasharray="4 5"/>
+  <g fill="#17202A" fill-opacity=".14" stroke="#17202A" stroke-width="1.5">
+    <circle cx="440" cy="176" r="16"/><circle cx="478" cy="192" r="10"/><circle cx="470" cy="250" r="22"/><circle cx="520" cy="270" r="9"/><circle cx="462" cy="316" r="12"/><circle cx="494" cy="364" r="15"/>
+  </g>
+  <g font-size="18" fill="#58616C" text-anchor="middle">
+    <text x="135" y="446">A</text><text x="309" y="446">B</text><text x="483" y="446" fill="#17202A" font-weight="bold">C</text><text x="657" y="446">D</text>
+  </g>
+</svg>
