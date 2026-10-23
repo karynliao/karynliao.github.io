@@ -1,0 +1,31 @@
+---
+layout: default
+---
+{%- assign projects = site.projects | sort: "order" -%}
+{%- for p in projects -%}{%- if p.url == page.url -%}{%- assign i = forloop.index0 -%}{%- endif -%}{%- endfor -%}
+{%- assign prev_i = i | minus: 1 -%}{%- assign next_i = i | plus: 1 -%}
+<article class="case">
+  <div class="wrap"><div class="inner">
+    <a class="back" href="{{ '/#work' | relative_url }}">← All work</a>
+    <h1>{{ page.title }}</h1>
+    <p class="dek">{{ page.summary }}</p>
+    {% include cover.html project=page large=true %}
+    <dl class="meta">
+      <div><dt class="label">Role</dt><dd>{{ page.role }}</dd></div>
+      <div><dt class="label">Methods</dt><dd>{{ page.methods }}</dd></div>
+      <div><dt class="label">Team</dt><dd>{{ page.team }}</dd></div>
+    </dl>
+    <div class="part"><p class="label">Challenge</p><h2>{{ page.challenge_title }}</h2>{{ page.challenge | markdownify }}</div>
+    <div class="part"><p class="label">Approach</p><h2>{{ page.approach_title }}</h2>{{ page.approach | markdownify }}</div>
+    {%- if page.impact.size > 0 %}
+    <div class="part"><p class="label">Impact</p><h2>What it changed</h2><ul>
+      {%- for item in page.impact %}<li>{{ item }}</li>{% endfor %}
+    </ul></div>
+    {%- endif %}
+    {{ content }}
+    <nav class="next" aria-label="Case studies">
+      {%- if i > 0 %}<a href="{{ projects[prev_i].url | relative_url }}">← Previous</a>{% else %}<a href="{{ '/#work' | relative_url }}">← All work</a>{% endif -%}
+      {%- if next_i < projects.size %}<a href="{{ projects[next_i].url | relative_url }}">Next project →</a>{% else %}<a href="{{ '/#contact' | relative_url }}">Get in touch →</a>{% endif %}
+    </nav>
+  </div></div>
+</article>

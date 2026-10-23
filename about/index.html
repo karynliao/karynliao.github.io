@@ -1,0 +1,32 @@
+---
+layout: default
+title: About
+---
+{%- assign s = site.data.site -%}
+<article class="case">
+  <section class="about-page">
+    <div class="wrap about">
+      <div>
+        <p class="label">About</p>
+        <p class="big" style="margin-top:14px">{{ s.mission }}</p>
+        <p class="sub">{{ s.about }}</p>
+        <p class="edu">{{ s.education }}</p>
+      </div>
+      <div>
+        <p class="label" style="margin-bottom:14px">Experience</p>
+        <ul class="exp">
+          {%- for e in site.data.experience.items %}
+          <li><div><b>{{ e.role }}</b><br><span>{{ e.org }}</span></div><span class="yrs">{{ e.years }}</span></li>
+          {%- endfor %}
+        </ul>
+        <p class="label" style="margin:28px 0 8px">Languages</p>
+        <p>{{ s.languages }}</p>
+        <div class="email-row">
+          {%- if s.resume and s.resume != "" %}<a class="btn" href="{{ s.resume | relative_url }}" target="_blank" rel="noopener">Download résumé (PDF)</a>{% endif %}
+          <a class="btn ghost" href="{{ s.linkedin }}" target="_blank" rel="noopener">Full profile on LinkedIn ↗</a>
+        </div>
+      </div>
+    </div>
+    <div class="wrap"><nav class="next" aria-label="About"><a href="{{ '/#work' | relative_url }}">← See my work</a><a href="{{ '/#contact' | relative_url }}">Get in touch →</a></nav></div>
+  </section>
+</article>

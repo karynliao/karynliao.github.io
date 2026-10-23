@@ -1,0 +1,11 @@
+{%- assign s = site.data.site -%}
+<section id="contact">
+  <div class="wrap contact">
+    <p class="label">Contact</p>
+    <h2 style="margin-top:14px">{{ s.contact_heading }}</h2>
+    <div class="email-row">
+      <a class="email" href="mailto:{{ s.email }}">{{ s.email }}</a>
+      <a class="btn" href="{{ s.linkedin }}" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+  </div>
+</section>

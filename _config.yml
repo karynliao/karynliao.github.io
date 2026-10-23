@@ -1,0 +1,13 @@
+title: Karyn Liao
+description: Karyn Liao, UX researcher.
+url: ""
+baseurl: ""
+permalink: pretty
+collections:
+  projects:
+    output: true
+    permalink: /work/:name/
+exclude: [README.md, .pages.yml]
+defaults:
+  - scope: { path: "", type: projects }
+    values: { layout: project }

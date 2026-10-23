@@ -1,0 +1,66 @@
+media:
+  input: assets/images
+  output: /assets/images
+
+content:
+  - name: site
+    label: Site text & contact
+    type: file
+    path: _data/site.yml
+    fields:
+      - { name: name, label: Name, type: string }
+      - { name: greeting, label: Home - greeting, type: string }
+      - { name: intro, label: Home - intro sentence, type: text }
+      - { name: highlight, label: Home - words to highlight (must appear in the intro), type: string }
+      - { name: photo, label: Home - your photo, type: image }
+      - { name: about_teaser, label: Home - short About line, type: text }
+      - { name: mission, label: About page - headline, type: string }
+      - { name: about, label: About page - paragraph, type: text }
+      - { name: education, label: About page - education, type: text }
+      - { name: languages, label: About page - languages, type: string }
+      - { name: resume, label: About page - resume PDF, type: file }
+      - { name: contact_heading, label: Contact - heading, type: string }
+      - { name: email, label: Contact - email, type: string }
+      - { name: linkedin, label: Contact - LinkedIn URL, type: string }
+
+  - name: experience
+    label: Experience
+    type: file
+    path: _data/experience.yml
+    fields:
+      - name: items
+        label: Jobs (top = most recent)
+        type: object
+        list: true
+        fields:
+          - { name: role, label: Title, type: string }
+          - { name: org, label: Company, type: string }
+          - { name: years, label: Years, type: string }
+
+  - name: projects
+    label: Projects
+    type: collection
+    path: _projects
+    view:
+      fields: [title, tag, order]
+      sort: [order]
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - { name: order, label: Order on home page (1 = first), type: number }
+      - { name: tag, label: Method tag, type: string }
+      - { name: cover_image, label: Cover image (optional - leave empty to use the illustration), type: image }
+      - name: illustration
+        label: Illustration (used when no cover image)
+        type: select
+        options:
+          values: [journey, tree, prototypes]
+      - { name: summary, label: Summary, type: text }
+      - { name: role, label: Role, type: string }
+      - { name: methods, label: Methods, type: string }
+      - { name: team, label: Team, type: string }
+      - { name: challenge_title, label: Challenge - heading, type: string }
+      - { name: challenge, label: Challenge - text, type: text }
+      - { name: approach_title, label: Approach - heading, type: string }
+      - { name: approach, label: Approach - text, type: text }
+      - { name: impact, label: Impact (one point per line), type: string, list: true }
+      - { name: body, label: Extra content (optional), type: rich-text }

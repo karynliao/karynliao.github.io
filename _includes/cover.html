@@ -1,0 +1,17 @@
+{%- assign p = include.project -%}
+{%- assign tiles = "a,b,c" | split: "," -%}
+{%- assign idx = p.order | minus: 1 | modulo: 3 -%}
+{%- if p.cover_image and p.cover_image != "" -%}
+<div class="cover has-img {{ tiles[idx] }}"><img src="{{ p.cover_image | relative_url }}" alt="" loading="lazy"></div>
+{%- else -%}
+<div class="cover {{ tiles[idx] }}" aria-hidden="true">
+  {%- case p.illustration -%}
+  {%- when "tree" -%}
+  <div class="art art-tree"{% if include.large %} style="width:60%"{% endif %}><b></b><ul><li style="width:70%"></li><li class="on" style="width:90%"></li><li style="width:55%"></li><li style="width:80%"></li></ul></div>
+  {%- when "prototypes" -%}
+  <div class="art art-protos"{% if include.large %} style="width:70%"{% endif %}><div><span class="img"></span><span></span></div><div><span></span><span class="img"></span></div><div class="on"><span></span><span class="img"></span><span></span></div><div><span class="img"></span><span></span></div></div>
+  {%- else -%}
+  <div class="art art-journey" style="height:{% if include.large %}100{% else %}70{% endif %}%"><i style="height:35%"></i><i style="height:55%"></i><i class="on" style="height:90%"></i><i style="height:60%"></i><i style="height:40%"></i></div>
+  {%- endcase -%}
+</div>
+{%- endif -%}

@@ -1,0 +1,49 @@
+---
+layout: default
+title: Home
+---
+{%- assign s = site.data.site -%}
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <h1>{{ s.greeting }}</h1>
+        {%- capture hl %}<mark>{{ s.highlight }}</mark>{% endcapture %}
+        <p class="lede">{% if s.highlight and s.highlight != "" %}{{ s.intro | replace: s.highlight, hl }}{% else %}{{ s.intro }}{% endif %}</p>
+      </div>
+      {% if s.photo and s.photo != "" -%}
+      <div class="photo"><img src="{{ s.photo | relative_url }}" alt="Photo of {{ s.name }}"></div>
+      {%- else -%}
+      <div class="photo" aria-hidden="true">KL</div>
+      {%- endif %}
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head"><h2>Selected work</h2></div>
+    <div class="grid">
+      {%- assign projects = site.projects | sort: "order" -%}
+      {%- for p in projects %}
+      <a class="card" href="{{ p.url | relative_url }}">
+        {% include cover.html project=p %}
+        <span class="label">{{ p.tag }}</span>
+        <h3>{{ p.title }}</h3>
+      </a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section id="intro">
+  <div class="wrap intro">
+    <p class="label">About</p>
+    <div>
+      <p class="big">{{ s.about_teaser }}</p>
+      <a class="more" href="{{ '/about/' | relative_url }}">More about me →</a>
+    </div>
+  </div>
+</section>
+
+{% include contact.html %}
